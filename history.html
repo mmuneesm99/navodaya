@@ -10,6 +10,30 @@
 </head>
 <body>
 
+<!-- ================================================================== -->
+<!-- SITE LOADER                                                        -->
+<!-- ================================================================== -->
+<div class="site-loader" id="siteLoader">
+  <div class="loader-content">
+    <div class="reel-spinner">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke="var(--hairline)" stroke-width="4" fill="none" />
+        <circle cx="50" cy="50" r="40" stroke="var(--gold)" stroke-width="4" fill="none" stroke-dasharray="60 180" class="spinner-ring" />
+        <circle cx="50" cy="50" r="16" fill="var(--gold)" opacity="0.15" />
+        <circle cx="50" cy="22" r="4" fill="var(--gold)" />
+        <circle cx="50" cy="78" r="4" fill="var(--gold)" />
+        <circle cx="22" cy="50" r="4" fill="var(--gold)" />
+        <circle cx="78" cy="50" r="4" fill="var(--gold)" />
+        <circle cx="30" cy="30" r="4" fill="var(--gold)" />
+        <circle cx="70" cy="70" r="4" fill="var(--gold)" />
+        <circle cx="30" cy="70" r="4" fill="var(--gold)" />
+        <circle cx="70" cy="30" r="4" fill="var(--gold)" />
+      </svg>
+    </div>
+    <div class="loader-ticker" id="loaderTicker">Initializing Archive...</div>
+  </div>
+</div>
+
 <div class="beam-sweep" aria-hidden="true"></div>
 
 <!-- ================================================================== -->

@@ -10,6 +10,30 @@
 </head>
 <body>
 
+<!-- ================================================================== -->
+<!-- SITE LOADER                                                        -->
+<!-- ================================================================== -->
+<div class="site-loader" id="siteLoader">
+  <div class="loader-content">
+    <div class="reel-spinner">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke="var(--hairline)" stroke-width="4" fill="none" />
+        <circle cx="50" cy="50" r="40" stroke="var(--gold)" stroke-width="4" fill="none" stroke-dasharray="60 180" class="spinner-ring" />
+        <circle cx="50" cy="50" r="16" fill="var(--gold)" opacity="0.15" />
+        <circle cx="50" cy="22" r="4" fill="var(--gold)" />
+        <circle cx="50" cy="78" r="4" fill="var(--gold)" />
+        <circle cx="22" cy="50" r="4" fill="var(--gold)" />
+        <circle cx="78" cy="50" r="4" fill="var(--gold)" />
+        <circle cx="30" cy="30" r="4" fill="var(--gold)" />
+        <circle cx="70" cy="70" r="4" fill="var(--gold)" />
+        <circle cx="30" cy="70" r="4" fill="var(--gold)" />
+        <circle cx="70" cy="30" r="4" fill="var(--gold)" />
+      </svg>
+    </div>
+    <div class="loader-ticker" id="loaderTicker">Initializing Archive...</div>
+  </div>
+</div>
+
 <div class="beam-sweep" aria-hidden="true"></div>
 
 <!-- ================================================================== -->
@@ -83,6 +107,75 @@
         Navodaya did not simply shoot movies; they built the physical infrastructure behind them. When the studio decided to release the region's first anamorphic Cinemascope feature, they surveyed and modified theater seating and projection designs across South India to ensure audiences could fully experience the wide, panoramic horizons.
       </p>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================================== -->
+<!-- SECTION 1B — THE KAKKANAD GRAVITY ROOM EXHIBITION                  -->
+<!-- ================================================================== -->
+<section class="section" id="gravity-exhibition" style="padding-top: 5rem; padding-bottom: 5rem;">
+  <div style="max-width: 1080px; margin: 0 auto;">
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;" class="gravity-layout">
+      <!-- Left Column: Editorial explanation -->
+      <div class="reveal">
+        <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1rem 0;">
+          <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+        </svg>
+        <p class="eyebrow" style="text-align: left; margin-bottom: 12px;">Interactive Exhibition</p>
+        <h2 class="heading-traditional" style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 500; margin-bottom: 1.5rem; line-height: 1.1;">The Kakkanad Gravity Room</h2>
+        <p style="font-size: 15px; line-height: 1.85; color: var(--silver); margin-bottom: 1.2rem;">
+          In 1984, to capture the gravity-defying sequences of <em>My Dear Kuttichathan</em>, Navodaya Appachan and director Jijo Punnoose engineered a fully rotational cubic set suspended on a massive steel axle. 
+        </p>
+        <p style="font-size: 14.5px; line-height: 1.8; color: var(--silver); margin-bottom: 2rem;">
+          By bolting the camera directly to the rotating room frame, the set appeared upright and stationary, creating the illusion of children walking up walls and dancing on ceilings. Use the interactive simulator to toggle perspectives and see the engineering behind the magic.
+        </p>
+        
+        <!-- Controls panel -->
+        <div class="gravity-controls">
+          <div class="control-group">
+            <span class="control-label">1. Choose Camera Perspective</span>
+            <div class="toggle-switch-wrapper">
+              <button class="toggle-btn active" id="btnStudioCam" data-mode="studio">Studio (External View)</button>
+              <button class="toggle-btn" id="btnCinematicCam" data-mode="cinematic">Cinematic (Camera Inside Set)</button>
+            </div>
+          </div>
+          
+          <div class="control-group" style="margin-top: 1.8rem;">
+            <span class="control-label">2. Rotate the Set</span>
+            <div class="rotation-btns">
+              <button class="rot-btn active" data-angle="0">Floor (0°)</button>
+              <button class="rot-btn" data-angle="90">Left Wall (90°)</button>
+              <button class="rot-btn" data-angle="180">Ceiling (180°)</button>
+              <button class="rot-btn" data-angle="270">Right Wall (270°)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: The 3D Room Viewer -->
+      <div class="reveal reveal-delay-2" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+        <div class="gravity-view-panel">
+          <div class="gravity-view-indicator" id="gravityIndicator">Studio Camera Locked</div>
+          <div class="gravity-room-cube" id="gravityRoom">
+            <!-- 3D Cube Faces -->
+            <div class="room-face back"></div>
+            <div class="room-face left"></div>
+            <div class="room-face right"></div>
+            <div class="room-face top"></div>
+            <div class="room-face bottom"></div>
+            <!-- Character sprite -->
+            <div class="gravity-character" id="gravityChar"></div>
+          </div>
+        </div>
+        <p class="fig-caption" style="text-align: center; margin-top: 1.2rem; font-size: 11px; letter-spacing: 0.1em; color: var(--silver); text-transform: uppercase;">
+          Fig. 04 · Interactive 3D Set Mechanics
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -202,6 +295,156 @@
         <p>Pioneered non-linear systems by importing the first Avid editing suite and ProTools audio console to India.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- SECTION 3B — THE KAKKANAD ENGINEERING DESK                         -->
+<!-- ================================================================== -->
+<section class="section" id="engineering-desk" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    
+    <div class="blueprint-layout" style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;">
+      
+      <!-- Left Column: Interactive SVG Optical Blueprint -->
+      <div class="reveal" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="blueprint-frame">
+          <div class="blueprint-glow"></div>
+          <svg viewBox="0 0 400 300" class="lens-schematic" id="blueprintSvg">
+            <!-- Blueprint grid lines -->
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(197, 168, 128, 0.05)" stroke-width="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            
+            <!-- Axis lines -->
+            <line x1="20" y1="150" x2="380" y2="150" stroke="rgba(197, 168, 128, 0.2)" stroke-width="1" stroke-dasharray="4 4" />
+            <line x1="200" y1="20" x2="200" y2="280" stroke="rgba(197, 168, 128, 0.15)" stroke-width="0.5" stroke-dasharray="4 4" />
+            
+            <!-- Component 1: Axle Mount / Chassis (Appachan) -->
+            <g id="part-chassis" class="blueprint-group">
+              <rect x="180" y="50" width="40" height="200" rx="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <line x1="160" y1="150" x2="240" y2="150" stroke="currentColor" stroke-width="2" />
+              <rect x="150" y="140" width="10" height="20" fill="none" stroke="currentColor" stroke-width="1" />
+              <rect x="240" y="140" width="10" height="20" fill="none" stroke="currentColor" stroke-width="1" />
+              <text x="210" y="240" font-size="8" fill="currentColor" opacity="0.6">Axle Mount</text>
+            </g>
+            
+            <!-- Component 2: Twin Anamorphic Lenses (Jijo) -->
+            <g id="part-lenses" class="blueprint-group">
+              <!-- Top Lens -->
+              <path d="M 80 110 A 45 45 0 0 1 120 70 A 45 45 0 0 1 80 110 Z" fill="none" stroke="currentColor" stroke-width="2" />
+              <line x1="80" y1="70" x2="120" y2="110" stroke="currentColor" stroke-width="0.8" opacity="0.5" />
+              <!-- Bottom Lens -->
+              <path d="M 80 230 A 45 45 0 0 1 120 190 A 45 45 0 0 1 80 230 Z" fill="none" stroke="currentColor" stroke-width="2" />
+              <line x1="80" y1="190" x2="120" y2="230" stroke="currentColor" stroke-width="0.8" opacity="0.5" />
+              <!-- Convergence light ray paths -->
+              <path d="M 30 90 L 100 90 L 200 150 M 30 210 L 100 210 L 200 150" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="light-ray" />
+              <text x="65" y="60" font-size="8" fill="currentColor" opacity="0.6">Twin-Optics (3D)</text>
+            </g>
+            
+            <!-- Component 3: Film Strip Chemistry Gate (Lab Technicians) -->
+            <g id="part-chemistry" class="blueprint-group">
+              <rect x="290" y="80" width="40" height="140" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 3" />
+              <!-- Sprocket holes -->
+              <rect x="294" y="90" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="110" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="130" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="150" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="170" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="190" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="294" y="210" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              
+              <rect x="322" y="90" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="110" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="130" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="150" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="170" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="190" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              <rect x="322" y="210" width="4" height="6" fill="none" stroke="currentColor" stroke-width="0.8" />
+              
+              <text x="290" y="72" font-size="8" fill="currentColor" opacity="0.6">70mm Film Gate</text>
+            </g>
+            
+            <!-- Component 4: Digital Sound / Console Gate (Jose) -->
+            <g id="part-digital" class="blueprint-group">
+              <path d="M 330 150 C 350 140, 360 160, 380 150" fill="none" stroke="currentColor" stroke-width="1.5" class="sound-wave" />
+              <circle cx="330" cy="150" r="3" fill="currentColor" />
+              <rect x="348" y="115" width="2" height="70" fill="currentColor" opacity="0.3" />
+              <text x="330" y="240" font-size="8" fill="currentColor" opacity="0.6">Sound Line (Avid/ProTools)</text>
+            </g>
+          </svg>
+        </div>
+        <p class="fig-caption" style="text-align: center; margin-top: 1.2rem; font-size: 11px; letter-spacing: 0.1em; color: var(--silver); text-transform: uppercase;">
+          Fig. 05 · Anamorphic & Stereoscopic Optical Blueprint
+        </p>
+      </div>
+
+      <!-- Right Column: Interactive Profiles Accordion -->
+      <div class="reveal">
+        <div class="blueprint-head">
+          <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 0.8rem 0;">
+            <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+          </svg>
+          <p class="eyebrow" style="margin-bottom: 8px;">The Engineering Minds</p>
+          <h2 class="heading-traditional" style="font-size: clamp(2rem, 5vw, 2.6rem); margin-bottom: 1.5rem;">The Kakkanad Engineering Desk</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--silver); margin-bottom: 2rem;">
+            Before Navodaya built the films, they built the physical machinery. Select an expert below to highlight their corresponding optical focus in the schematic drawings.
+          </p>
+        </div>
+
+        <div class="expert-accordion">
+          
+          <!-- Card 1: Appachan -->
+          <div class="expert-card is-active" data-part="chassis">
+            <div class="expert-header">
+              <span class="expert-tag">Set Engineering & Logistics</span>
+              <h3 class="expert-name">M. Chacko Punnoose (Appachan)</h3>
+            </div>
+            <div class="expert-body">
+              <p>The founder and physical architect of Navodaya Kakkanad. Appachan pioneered outdoor widescreen staging and logistics, designing the horizontal steel structural mountings and mechanical pivot axles that made rotating sets like the gravity room possible.</p>
+            </div>
+          </div>
+          
+          <!-- Card 2: Jijo -->
+          <div class="expert-card" data-part="lenses">
+            <div class="expert-header">
+              <span class="expert-tag">3D Stereoscopy & Optics</span>
+              <h3 class="expert-name">Jijo Punnoose</h3>
+            </div>
+            <div class="expert-body">
+              <p>Lead visual researcher who brought twin-lens 3D stereoscopy to India. Jijo designed the dual-camera optical alignment paths for shooting fantasy films and calculated projection geometry constraints to align dual projection lenses in local theaters.</p>
+            </div>
+          </div>
+          
+          <!-- Card 3: Jose -->
+          <div class="expert-card" data-part="digital">
+            <div class="expert-header">
+              <span class="expert-tag">Digital Audio & Editing</span>
+              <h3 class="expert-name">Jose Punnoose</h3>
+            </div>
+            <div class="expert-body">
+              <p>Technological modernizer who led the digital audio initiative in 1992. Jose spearheaded the installation of India's earliest non-linear editing platform (Avid Media Composer) and digital multi-track audio console (ProTools), replacing manual tape-splicing gates.</p>
+            </div>
+          </div>
+          
+          <!-- Card 4: Technicians -->
+          <div class="expert-card" data-part="chemistry">
+            <div class="expert-header">
+              <span class="expert-tag">Chemistry & Widescreen Film</span>
+              <h3 class="expert-name">Stereo Lab Technicians</h3>
+            </div>
+            <div class="expert-body">
+              <p>The chemical engineers behind the 70mm gate print chemistry. They calculated chemical bath timings and optical blow-up lenses to process wide 70mm and stereophonic prints entirely inside Navodaya's Kakkanad laboratories.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>
