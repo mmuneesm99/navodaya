@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Navodaya Studio — The Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="beam-sweep" aria-hidden="true"></div>
+
+<!-- ================================================================== -->
+<!-- SITE NAV                                                            -->
+<!-- ================================================================== -->
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="wordmark">NAVODAYA <span>STUDIO</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Legacy</a>
+    <a href="history.html">History</a>
+    <a href="projects.html">Projects</a>
+    <a href="technology.html">Technology</a>
+    <a href="blogs.html">Blogs</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="active">Legacy</a>
+  <a href="history.html">History</a>
+  <a href="projects.html">Projects</a>
+  <a href="technology.html">Technology</a>
+  <a href="blogs.html">Blogs</a>
+</div>
+
+<!-- ================================================================== -->
+<!-- HERO                                                                -->
+<!-- ================================================================== -->
+<header class="hero" id="top">
+  <div class="reveal">
+    <p class="eyebrow">Navodaya Studio · Est. 1976</p>
+    <h1>The studio that widened <em>what cinema could hold.</em></h1>
+    <p>
+      From the first 70mm frame committed to Indian celluloid to the country's first
+      stereoscopic release, Navodaya spent two decades building the tools before it
+      could build the films. This archive keeps that engineering record intact.
+    </p>
+    <div class="hero-meta">
+      <div><b>3</b>Cinematic Firsts</div>
+      <div><b>1976</b>Studio Founded</div>
+      <div><b>70mm</b>Widest Gauge Shot</div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span class="line"></span>Scroll to explore</div>
+</header>
+
+<!-- ================================================================== -->
+<!-- SECTION 1 — MANIFESTO / STUDIO VISION                             -->
+<!-- ================================================================== -->
+<section class="section" id="vision" style="padding-bottom: 4rem;">
+  <div style="max-width: 880px; margin: 0 auto;">
+    <div class="reveal">
+      <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1rem 0;">
+        <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+      </svg>
+      <p class="eyebrow" style="text-align: center;">The Kakkanad Manifesto</p>
+      <h2 style="text-align: center; font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 2rem;" class="heading-traditional center">Optics. Chemistry. Widescreen Dreams.</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 3rem;" class="reveal">
+      <p class="drop-cap" style="font-size: 16px; line-height: 1.95; color: var(--silver);">
+        When Maliampurackal Chacko Punnoose (Navodaya Appachan) stepped away from Udaya Studios to build Navodaya on the isolated, rugged hills of Kakkanad in 1976, he was driven by a single conviction: Indian storytelling had outgrown the static confinement of painted studio flats. Widescreen cinema required actual mountains, massive reservoirs, and true stereoscopic cameras.
+      </p>
+      <p style="font-size: 15.5px; line-height: 1.9; color: var(--silver); margin-top: 0.5rem;">
+        Navodaya did not simply shoot movies; they built the physical infrastructure behind them. When the studio decided to release the region's first anamorphic Cinemascope feature, they surveyed and modified theater seating and projection designs across South India to ensure audiences could fully experience the wide, panoramic horizons.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================================== -->
+<!-- SECTION 2 — CINEMATIC TIMELINE                                     -->
+<!-- ================================================================== -->
+<section id="timeline">
+  <div class="timeline-sticky-container">
+    <div class="timeline-sticky-grid">
+      
+      <!-- Left Column: Header & Filmstrip Rail -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center;">
+        <div class="timeline-head reveal" style="margin-bottom: 0;">
+          <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 0.8rem 0;">
+            <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+          </svg>
+          <p class="eyebrow" style="margin-bottom: 8px;">The Archive · 1972 — 1992</p>
+          <h2 class="heading-traditional" style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 12px;">Two Decades of Widescreen Firsts</h2>
+          <p style="font-size: 13.5px; line-height: 1.6;">Every reel Navodaya cut widened what Indian cinema believed a screen could hold. Scroll down to roll through the timeline.</p>
+        </div>
+        
+        <div class="filmstrip-rail reveal" id="milestoneRail">
+          <button class="milestone is-active" data-index="0">
+            <span class="milestone-film-frame">
+              <span class="milestone-year-text">1982</span>
+            </span>
+            <span class="milestone-label-text">Padayottam</span>
+          </button>
+          <button class="milestone" data-index="1">
+            <span class="milestone-film-frame">
+              <span class="milestone-year-text">1984</span>
+            </span>
+            <span class="milestone-label-text">Kuttichathan 3D</span>
+          </button>
+          <button class="milestone" data-index="2">
+            <span class="milestone-film-frame">
+              <span class="milestone-year-text">1987</span>
+            </span>
+            <span class="milestone-label-text">Kishkinta opens</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Frame with Nested Description Copy -->
+      <div class="frame-wrap reveal">
+        <div class="frame-visual film-frame-visual" id="frameVisual" style="max-width: none; width: 100%; height: 480px; margin: 0;">
+          <div class="glow" id="frameGlow"></div>
+          <img id="frameImg" class="frame-photo" src="" alt="" />
+          <canvas id="grainCanvas"></canvas>
+          <span class="frame-fig">Fig. <span id="frameFig">01</span></span>
+          <span class="frame-tick" style="display: none;"></span>
+          
+          <div class="film-text-overlay"></div>
+          
+          <div id="frameCopy" style="position: absolute; bottom: 20px; left: 24px; right: 24px; z-index: 4; margin: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.4rem;">
+              <p class="frame-tag" id="frameTag" style="margin: 0; font-size: 10px;">First Indian 70mm Film</p>
+              <div id="frameIconBadge" style="width: 24px; height: 24px; color: var(--gold); opacity: 0.8; flex-shrink: 0;"></div>
+            </div>
+            <h3 class="frame-title" id="frameTitle" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--cream);">Padayottam</h3>
+            <p class="frame-body" id="frameBody" style="font-size: 13px; line-height: 1.6; color: var(--silver);">
+              Shot in true 70mm at a time when most Indian studios had never handled the gauge, Padayottam forced Navodaya's engineers to design their own optics, projection rigs, and processing chemistry from scratch.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================================== -->
+<!-- SECTION 3 — STUDIO LEGACY STATS                                    -->
+<!-- ================================================================== -->
+<section class="section" id="legacy-stats" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div style="max-width: 1080px; margin: 0 auto;">
+    <div class="reveal" style="max-width: 600px; margin: 0 auto 3rem; text-align: center;">
+      <svg viewBox="0 0 100 20" class="traditional-accent">
+        <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+      </svg>
+      <p class="eyebrow">Pioneering Milestones</p>
+      <h2 class="heading-traditional center" style="font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 500;">Technological Achievements</h2>
+      <p style="color: var(--silver); font-size: 14.5px; margin-top: 1rem;">Navodaya Studio's engineering records changed the dimensions of Malayalam and Indian cinema forever.</p>
+    </div>
+
+    <div class="stats-grid">
+      
+      <!-- Stat 1 -->
+      <div class="stat-card reveal reveal-delay-1">
+        <b>1978</b>
+        <h3>Cinemascope</h3>
+        <p>Introduced wide anamorphic projections to the regional screens with the costume epic <i>Thacholi Ambu</i>.</p>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="stat-card reveal reveal-delay-2">
+        <b>70mm</b>
+        <h3>Film Gauge</h3>
+        <p>Produced <i>Padayottam</i>, the first Indian film shot, blown up, and mixed entirely domestically in 70mm.</p>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="stat-card reveal reveal-delay-3">
+        <b>3D</b>
+        <h3>Stereoscopy</h3>
+        <p>Released <i>My Dear Kuttichathan</i>, building custom twin-lens projection rigs to alignment tolerance.</p>
+      </div>
+
+      <!-- Stat 4 -->
+      <div class="stat-card reveal reveal-delay-4">
+        <b>1992</b>
+        <h3>Digital Edit</h3>
+        <p>Pioneered non-linear systems by importing the first Avid editing suite and ProTools audio console to India.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================================== -->
+<!-- SECTION 4 — CURATED PROJECT PREVIEWS                               -->
+<!-- ================================================================== -->
+<section class="section" id="projects-teaser" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="reveal" style="display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: flex-start; margin-bottom: 4rem; gap: 1.5rem;">
+      <div>
+        <p class="eyebrow">Active Screenplays</p>
+        <h2 style="font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; margin: 0 0 1rem;">Creative Screenplays & Adaptation Drafts</h2>
+        <p style="color: var(--silver); font-size: 14.5px; max-width: 32rem;">Explore the proposed scripts, biopics, and costume drama screenplays written by Jijo and Jose Punnoose.</p>
+      </div>
+      <a href="projects.html" class="project-link" style="border: 1px solid var(--gold); padding: 0.6rem 1.4rem; border-radius: 4px; transition: background 300ms ease; flex-shrink: 0;">View Full Filmography <span>→</span></a>
+    </div>
+
+    <div class="projects-layout-asymmetric">
+      
+      <!-- Project 1: Chundan -->
+      <div class="project-card featured-card reveal reveal-delay-1">
+        <div class="project-photo">
+          <img src="https://static.wixstatic.com/media/8a582f_79702b2e229244d48df889ee6c2ee914~mv2.jpg" alt="Chundan Snake Boat" />
+        </div>
+        <div class="project-details">
+          <span class="project-card-tag">Historical Study</span>
+          <h3 class="project-card-title">Chundan</h3>
+          <p class="project-card-desc">Jijo Punnoose's deep mathematical and architectural investigation into the combat history and construction of the iconic snake boats of Kerala.</p>
+          <a href="projects.html" class="project-link">View Details <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Project 2: Barroz -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-photo">
+          <img src="https://static.wixstatic.com/media/8a582f_9b308942ae18498d883a54b6b50c6330~mv2.jpg" alt="Barroz Concept art" />
+        </div>
+        <div class="project-details">
+          <span class="project-card-tag">Fantasy Screenplay</span>
+          <h3 class="project-card-title">D'Gama's Treasure</h3>
+          <p class="project-card-desc">An adaptation screenplay written for international production houses, based on Jijo's 2018 fantasy novel surrounding the protector of Vasco da Gama's chest.</p>
+          <a href="projects.html" class="project-link">View Details <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- Project 3: Chekon -->
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-photo">
+          <img src="https://static.wixstatic.com/media/8a582f_a6c8d26772934b52aaeb24ab69126b7d~mv2.jpg" alt="Chekon martial arts" />
+        </div>
+        <div class="project-details">
+          <span class="project-card-tag">Costume Drama</span>
+          <h3 class="project-card-title">CHEKON</h3>
+          <p class="project-card-desc">A theatrical adaptation of the folklore ballads of North Malabar, outlining the martial legend of Chandu Chekavar, written by Jose Punnoose.</p>
+          <a href="projects.html" class="project-link">View Details <span>→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================================== -->
+<!-- SECTION 5 — LATEST MEMOIRS / BLOG TEASERS                          -->
+<!-- ================================================================== -->
+<section class="section" id="blogs-teaser" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+      <svg viewBox="0 0 100 20" class="traditional-accent">
+        <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+      </svg>
+      <p class="eyebrow">Memoir Snippets</p>
+      <h2 class="heading-traditional center" style="font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 500;">Revolving Memoirs</h2>
+      <p style="color: var(--silver); font-size: 14.5px; margin-top: 1rem;">Read the first-hand records, diary logs, and reflections of the filmmakers behind Navodaya's technical innovations.</p>
+    </div>
+
+    <div class="blogs-list">
+      
+      <!-- Blog 1 -->
+      <article class="blog-post-card reveal reveal-delay-1">
+        <div class="blog-post-thumb">
+          <img src="https://static.wixstatic.com/media/8a582f_96b57487906b41dc9f22223b6ada45d6~mv2.jpg" alt="Gravity room manuscript" />
+        </div>
+        <div class="blog-post-details">
+          <span class="blog-post-meta">Jijo Punnoose · May 2022</span>
+          <h3 class="blog-post-title">Gravity Illusion & Kuttichathan</h3>
+          <p class="blog-post-excerpt">An inside look at how the production team built a 360-degree rotating room set in Kochi to execute the iconic gravity-defying sequences of My Dear Kuttichathan without utilizing any green-screen CGI.</p>
+          <a href="blogs.html" class="blog-post-read">Read Full Post <span>→</span></a>
+        </div>
+      </article>
+
+      <!-- Blog 2 -->
+      <article class="blog-post-card reveal reveal-delay-2">
+        <div class="blog-post-thumb">
+          <img src="https://static.wixstatic.com/media/8a582f_a101ef36b54a44d197318539b4c7580c~mv2.jpg" alt="Appachan at Udaya Studios" />
+        </div>
+        <div class="blog-post-details">
+          <span class="blog-post-meta">Jijo Punnoose · Jan 2023</span>
+          <h3 class="blog-post-title">The Alappuzha & Kakkanad Diaries</h3>
+          <p class="blog-post-excerpt">Reflecting on the brothers' early days at Udaya Studios in Alappuzha, the transition to the hills of Kakkanad, and the cultural shifts that occurred as Malayalam filmmaking migrated from studio floor sets to deep wilderness locations.</p>
+          <a href="blogs.html" class="blog-post-read">Read Full Post <span>→</span></a>
+        </div>
+      </article>
+
+      <!-- Blog 3 -->
+      <article class="blog-post-card reveal reveal-delay-3">
+        <div class="blog-post-thumb">
+          <img src="https://static.wixstatic.com/media/8a582f_83fb327c359c4d6e93b1c7db76efa385~mv2.jpg" alt="Dream Merchant and international projects" />
+        </div>
+        <div class="blog-post-details">
+          <span class="blog-post-meta">Jijo Punnoose · Jun 2023</span>
+          <h3 class="blog-post-title">Treasure Projects: Navodaya 2.0</h3>
+          <p class="blog-post-excerpt">Exploring how the studio is marshalling its artistic resources to create a cross-platform creative house linking education, entertainment, and AI, preparing the next generation of storytellers for tomorrow's entertainment.</p>
+          <a href="blogs.html" class="blog-post-read">Read Full Post <span>→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- FOOTER                                                              -->
+<!-- ================================================================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark">NAVODAYA <span>STUDIO</span></span>
+      <p>Founded in 1972, Navodaya built the optics, projection rigs, and processing chemistry behind India's earliest 70mm and stereoscopic releases.</p>
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Explore</p>
+      <ul>
+        <li><a href="index.html">The Archive</a></li>
+        <li><a href="history.html">Studio History</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="technology.html">Engineering Notes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Correspondence</p>
+      <ul>
+        <li><a href="mailto:archive@navodayastudio.com">archive@navodayastudio.com</a></li>
+        <li><a href="history.html">Kakkanad, Kochi, Kerala</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 1972 — 2026 Navodaya Studio</span>
+    <span>Site design in keeping with the archive</span>
+  </div>
+</footer>
+
+<script>
+  // ---------- Navigation Menu (Scroll & Mobile Toggle) ----------
+  var siteNav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function () {
+    siteNav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  navToggle.addEventListener('click', function() {
+    mobileNav.classList.toggle('open');
+    navToggle.classList.toggle('active');
+  });
+
+  // Close mobile nav when clicking a link
+  mobileNav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // ---------- Bespoke line-art icons + tonal washes per milestone ----------
+  var milestoneData = [
+    {
+      year: '1982', fig: '01', tag: 'First Indian 70mm Film', title: 'Padayottam',
+      wash: '#10201d', glow: 'rgba(90,150,140,0.16)',
+      image: 'https://static.wixstatic.com/media/8a582f_3dcfbf3138d44d9f9869ae0e194b2934~mv2.jpg',
+      body: "Shot in true 70mm at a time when most Indian studios had never handled the gauge, Padayottam forced Navodaya's engineers to design their own optics, projection rigs, and processing chemistry from scratch. It remains the widest frame the country's cinema had committed to celluloid.",
+      icon: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="30" width="72" height="40" rx="2"/><path d="M14 42 Q30 34 46 42 T78 42" stroke="#5c9490" opacity="0.7"/><circle cx="22" cy="24" r="2" fill="#3a3733"/><circle cx="50" cy="24" r="2" fill="#3a3733"/><circle cx="78" cy="24" r="2" fill="#3a3733"/><circle cx="22" cy="76" r="2" fill="#3a3733"/><circle cx="50" cy="76" r="2" fill="#3a3733"/><circle cx="78" cy="76" r="2" fill="#3a3733"/></svg>'
+    },
+    {
+      year: '1984', fig: '02', tag: 'First Indian 3D Film', title: 'My Dear Kuttichathan',
+      wash: '#241510', glow: 'rgba(190,110,80,0.15)',
+      image: 'https://static.wixstatic.com/media/8a582f_e206088eb508470fb89091d09e36f8ee~mv2.jpg',
+      body: "Released in a custom anaglyph process with paper red-and-cyan glasses handed out at the door, Kuttichathan introduced an entire country to stereoscopic cinema in a single run. Theatres queued for weeks to install the twin-lens projection rigs it required.",
+      icon: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 46 h20 a4 4 0 0 1 4 4 v6 a10 10 0 0 1 -10 10 h-4 a10 10 0 0 1 -10 -10 z" stroke="#bd6a4f"/><path d="M82 46 h-20 a4 4 0 0 0 -4 4 v6 a10 10 0 0 0 10 10 h4 a10 10 0 0 0 10 -10 z" stroke="#5c9490"/><line x1="42" y1="52" x2="58" y2="52"/><line x1="18" y1="52" x2="8" y2="46" stroke="#8a7f70"/><line x1="82" y1="52" x2="92" y2="46" stroke="#8a7f70"/></svg>'
+    },
+    {
+      year: '1987', fig: '03', tag: 'India\u2019s First Theme Park', title: 'Kishkinta Opens',
+      wash: '#16200f', glow: 'rgba(120,150,90,0.14)',
+      image: 'https://static.wixstatic.com/media/8a582f_ee9ed8d5f16c4210bdfc7d0e17164c15~mv2.jpg',
+      body: "Built on the momentum — and the earnings — of the studio's cinematic firsts, Kishkinta extended Navodaya's ambitions off the screen entirely, turning technical spectacle into a physical, walkable attraction near Chennai.",
+      icon: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="42" r="26"/><line x1="50" y1="16" x2="50" y2="68" stroke="#6f6a61" stroke-width="0.8"/><line x1="24" y1="42" x2="76" y2="42" stroke="#6f6a61" stroke-width="0.8"/><line x1="32" y1="24" x2="68" y2="60" stroke="#6f6a61" stroke-width="0.8"/><line x1="68" y1="24" x2="32" y2="60" stroke="#6f6a61" stroke-width="0.8"/><circle cx="50" cy="42" r="3" fill="#7ea082"/><path d="M30 82 L40 68 L60 68 L70 82 Z" stroke="#7ea082"/></svg>'
+    }
+  ];
+
+  var milestones = document.querySelectorAll('#milestoneRail .milestone');
+  var frameVisual = document.getElementById('frameVisual');
+  var frameGlow = document.getElementById('frameGlow');
+  var frameImg = document.getElementById('frameImg');
+  var frameIconBadge = document.getElementById('frameIconBadge');
+  var frameCopy = document.getElementById('frameCopy');
+  var frameFig = document.getElementById('frameFig');
+  var frameTag = document.getElementById('frameTag');
+  var frameTitle = document.getElementById('frameTitle');
+  var frameBody = document.getElementById('frameBody');
+
+  function applyMilestone(idx) {
+    var d = milestoneData[idx];
+    frameFig.textContent = d.fig;
+    frameTag.textContent = d.tag;
+    frameTitle.textContent = d.title;
+    frameBody.textContent = d.body;
+    if (frameImg) {
+      frameImg.src = d.image;
+      frameImg.alt = d.title;
+    }
+    if (frameIconBadge) {
+      frameIconBadge.innerHTML = d.icon;
+    }
+    frameVisual.style.setProperty('--wash-color', d.wash);
+    frameGlow.style.background = 'radial-gradient(closest-side, ' + d.glow + ', transparent 70%)';
+    
+    var railEl = document.getElementById('milestoneRail');
+    if (railEl) {
+      railEl.style.backgroundImage = 'linear-gradient(rgba(28, 26, 23, 0.93), rgba(28, 26, 23, 0.93)), url(' + d.image + ')';
+    }
+  }
+
+  function setMilestone(idx) {
+    milestones.forEach(function (m) { m.classList.remove('is-active'); });
+    milestones[idx].classList.add('is-active');
+    
+    if (frameVisual) frameVisual.classList.add('gate-exit');
+    if (frameCopy) frameCopy.classList.add('copy-exit');
+    
+    setTimeout(function () {
+      applyMilestone(idx);
+      
+      if (frameVisual) {
+        frameVisual.classList.remove('gate-exit');
+        frameVisual.classList.add('gate-enter-prep');
+        void frameVisual.offsetHeight;
+        frameVisual.classList.remove('gate-enter-prep');
+      }
+      if (frameCopy) {
+        frameCopy.classList.remove('copy-exit');
+      }
+    }, 350);
+  }
+
+  var currentActiveIdx = 0;
+  var timelineSec = document.getElementById('timeline');
+  var userInteracting = false;
+  var interactTimeout;
+
+  // Align scroll offset when a specific milestone button is clicked
+  function scrollToMilestone(idx) {
+    userInteracting = true;
+    clearTimeout(interactTimeout);
+    
+    var totalScrollable = timelineSec.offsetHeight - window.innerHeight;
+    var targetScroll = timelineSec.offsetTop + (idx / milestoneData.length) * totalScrollable + 80;
+    
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth'
+    });
+    
+    setMilestone(idx);
+    currentActiveIdx = idx;
+    
+    interactTimeout = setTimeout(function () {
+      userInteracting = false;
+    }, 1000);
+  }
+
+  milestones.forEach(function (m) {
+    m.addEventListener('click', function () {
+      scrollToMilestone(Number(m.dataset.index));
+    });
+  });
+
+  applyMilestone(0);
+
+  // ---------- Scroll-triggered timeline transition ----------
+  window.addEventListener('scroll', function () {
+    if (!timelineSec || userInteracting) return;
+    
+    var rect = timelineSec.getBoundingClientRect();
+    var viewHeight = window.innerHeight;
+    
+    // Switch active year as the user scrolls down the pinned section track
+    if (rect.top <= 0 && rect.bottom >= viewHeight) {
+      var totalScrollable = rect.height - viewHeight;
+      var scrolled = -rect.top;
+      var progress = scrolled / totalScrollable;
+      
+      var totalMilestones = milestoneData.length;
+      var activeIdx = Math.floor(progress * totalMilestones);
+      activeIdx = Math.max(0, Math.min(activeIdx, totalMilestones - 1));
+      
+      if (activeIdx !== currentActiveIdx) {
+        currentActiveIdx = activeIdx;
+        setMilestone(activeIdx);
+      }
+    }
+  });
+
+  // ---------- Generative film-grain "video" ----------
+  (function () {
+    var canvas = document.getElementById('grainCanvas');
+    var ctx = canvas.getContext('2d');
+    var w, h, imageData;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function resize() {
+      if (!frameVisual) return;
+      var rect = frameVisual.getBoundingClientRect();
+      w = canvas.width = Math.max(1, Math.floor(rect.width / 3));
+      h = canvas.height = Math.max(1, Math.floor(rect.height / 3));
+      imageData = ctx.createImageData(w, h);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function drawGrain() {
+      var buf = imageData.data;
+      for (var i = 0; i < buf.length; i += 4) {
+        var v = 150 + Math.random() * 105;
+        buf[i] = v; buf[i + 1] = v; buf[i + 2] = v;
+        buf[i + 3] = Math.random() * 40;
+      }
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    if (!reduceMotion) {
+      var last = 0;
+      function loop(ts) {
+        if (ts - last > 90) { drawGrain(); last = ts; }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    } else {
+      drawGrain();
+    }
+  })();
+</script>
+<script src="js/effects.js"></script>
+
+</body>
+</html>

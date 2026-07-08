@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Technical Papers — Navodaya Studio Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="beam-sweep" aria-hidden="true"></div>
+
+<!-- ================================================================== -->
+<!-- SITE NAV                                                            -->
+<!-- ================================================================== -->
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="wordmark">NAVODAYA <span>STUDIO</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Legacy</a>
+    <a href="history.html">History</a>
+    <a href="projects.html">Projects</a>
+    <a href="technology.html" class="active">Technology</a>
+    <a href="blogs.html">Blogs</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Legacy</a>
+  <a href="history.html">History</a>
+  <a href="projects.html">Projects</a>
+  <a href="technology.html" class="active">Technology</a>
+  <a href="blogs.html">Blogs</a>
+</div>
+
+<!-- ================================================================== -->
+<!-- MAIN SECTION                                                        -->
+<!-- ================================================================== -->
+<main class="section" style="margin-top: 5rem;" id="research">
+  <div class="research-inner">
+
+    <div class="research-head reveal">
+      <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1.5rem 0;">
+        <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+      </svg>
+      <p class="eyebrow">Technical Papers</p>
+      <h2 class="heading-traditional">The Engineering Notes</h2>
+    </div>
+
+    <nav class="chapter-nav-mobile" id="chapterNavMobile">
+      <ol>
+        <li><a href="#ch-1" class="chapter-link active" data-target="ch-1"><span class="thread"></span><span class="name">I · Stereoscopy</span></a></li>
+        <li><a href="#ch-2" class="chapter-link" data-target="ch-2"><span class="thread"></span><span class="name">II · 3D Imaging</span></a></li>
+        <li><a href="#ch-3" class="chapter-link" data-target="ch-3"><span class="thread"></span><span class="name">III · 70mm</span></a></li>
+        <li><a href="#ch-4" class="chapter-link" data-target="ch-4"><span class="thread"></span><span class="name">IV · Sound</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="research-layout">
+
+      <nav class="chapter-nav" id="chapterNav">
+        <ol>
+          <li><a href="#ch-1" class="chapter-link active" data-target="ch-1"><span class="thread"></span><span class="idx">Chapter I</span><span class="name">Foundations of Stereoscopy</span></a></li>
+          <li><a href="#ch-2" class="chapter-link" data-target="ch-2"><span class="thread"></span><span class="idx">Chapter II</span><span class="name">3D Imaging Principles</span></a></li>
+          <li><a href="#ch-3" class="chapter-link" data-target="ch-3"><span class="thread"></span><span class="idx">Chapter III</span><span class="name">70mm Frame Geometry</span></a></li>
+          <li><a href="#ch-4" class="chapter-link" data-target="ch-4"><span class="thread"></span><span class="idx">Chapter IV</span><span class="name">Sound Engineering in Depth</span></a></li>
+        </ol>
+      </nav>
+
+      <article class="reading-article">
+
+        <!-- Chapter 1 -->
+        <div class="chapter-block reveal" id="ch-1">
+          <p class="eyebrow">Chapter I</p>
+          <h3>Foundations of Stereoscopy</h3>
+
+          <div class="chapter-figure">
+            <svg viewBox="0 0 100 100" fill="none">
+              <circle cx="38" cy="50" r="20" stroke="#C5A880" stroke-width="1.1"/>
+              <circle cx="62" cy="50" r="20" stroke="#A39E93" stroke-width="1.1"/>
+              <line x1="38" y1="50" x2="80" y2="20" stroke="#6f6a61" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <line x1="62" y1="50" x2="80" y2="20" stroke="#6f6a61" stroke-width="0.8" stroke-dasharray="2 3"/>
+              <circle cx="80" cy="20" r="1.6" fill="#C5A880"/>
+            </svg>
+            <p class="fig-caption"><b>Fig. 01</b>Binocular convergence — two viewpoints reconciled into one point of depth.</p>
+          </div>
+
+          <p class="drop-cap">
+            Long before a single frame of Kuttichathan was exposed, Navodaya's technical unit spent three years studying binocular disparity — the small difference between what a left and right eye independently perceive. Human depth perception relies on the brain reconciling these two offset images into a single spatial impression, and any camera system attempting to reproduce that illusion has to first solve for interaxial distance, convergence, and parallax budget before a single foot of film is loaded.
+          </p>
+          <p>
+            The studio's engineers built their earliest test rigs from paired 16mm cameras bolted to a shared plate, manually adjusting lens spacing by millimetres between takes and projecting the results onto a bedsheet to judge comfort. Most early attempts caused the kind of eye strain that had made 3D a novelty rather than a craft elsewhere in the world — the question Navodaya set out to answer was whether it could be made to feel unremarkable instead of spectacular.
+          </p>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter-block reveal" id="ch-2">
+          <p class="eyebrow">Chapter II</p>
+          <h3>3D Imaging Principles</h3>
+
+          <div class="chapter-figure">
+            <svg viewBox="0 0 100 100" fill="none">
+              <rect x="18" y="26" width="46" height="48" rx="2" stroke="#bd6a4f" stroke-width="1" opacity="0.85"/>
+              <rect x="34" y="26" width="46" height="48" rx="2" stroke="#5c9490" stroke-width="1" opacity="0.85"/>
+              <line x1="18" y1="36" x2="12" y2="36" stroke="#6f6a61" stroke-width="0.8"/>
+              <line x1="18" y1="50" x2="12" y2="50" stroke="#6f6a61" stroke-width="0.8"/>
+              <line x1="18" y1="64" x2="12" y2="64" stroke="#6f6a61" stroke-width="0.8"/>
+              <line x1="80" y1="36" x2="86" y2="36" stroke="#6f6a61" stroke-width="0.8"/>
+              <line x1="80" y1="50" x2="86" y2="50" stroke="#6f6a61" stroke-width="0.8"/>
+              <line x1="80" y1="64" x2="86" y2="64" stroke="#6f6a61" stroke-width="0.8"/>
+            </svg>
+            <p class="fig-caption"><b>Fig. 02</b>Dual-strip capture — left/right negatives held in mechanical sync.</p>
+          </div>
+
+          <p class="drop-cap">
+            My Dear Kuttichathan was shot using a custom dual-strip anaglyph process, with two synchronized negatives recording the left and right eye images in complementary colour channels. Getting both strips to run in perfect mechanical sync — down to a fraction of a frame — was the difference between an image that read as depth and one that simply read as blur.
+          </p>
+          <p>
+            Projection required its own invention: a modified twin-lens projector housed at the back of participating theatres, calibrated afresh for each auditorium's throw distance. Paper anaglyph glasses, tinted red and cyan, were distributed at the door — a low-cost decoder for a genuinely high-cost engineering problem.
+          </p>
+          
+          <div class="chapter-photo-wrap reveal">
+            <img src="https://static.wixstatic.com/media/8a582f_67cc58a57ac344fbbc0dfc189b1da878~mv2.png" alt="3D Rotating Set Concept Sketch" />
+            <p class="fig-caption">Jijo Punnoose's original design schematic for the 3D rotating set used to create the gravity illusion in My Dear Kuttichathan.</p>
+          </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="chapter-block reveal" id="ch-3">
+          <p class="eyebrow">Chapter III</p>
+          <h3>70mm Frame Geometry</h3>
+
+          <div class="chapter-figure">
+            <svg viewBox="0 0 100 100" fill="none">
+              <rect x="30" y="34" width="24" height="32" stroke="#6f6a61" stroke-width="1"/>
+              <rect x="18" y="22" width="48" height="56" stroke="#C5A880" stroke-width="1.1"/>
+              <text x="42" y="30" font-family="Jost, sans-serif" font-size="6" fill="#A39E93" letter-spacing="0.5">70mm</text>
+              <text x="36" y="86" font-family="Jost, sans-serif" font-size="5" fill="#6f6a61" letter-spacing="0.5">35mm</text>
+            </svg>
+            <p class="fig-caption"><b>Fig. 03</b>Negative area — 70mm against the standard 35mm frame.</p>
+          </div>
+
+          <p class="drop-cap">
+            A standard 35mm frame gave Navodaya roughly half the negative area they wanted for Padayottam's water-borne set pieces. Moving to 70mm meant a frame nearly four times the surface, which in turn meant redesigning gate tolerances, pull-down mechanisms, and even the studio's own film transport paths to handle stock that was both wider and heavier through the camera.
+          </p>
+          <p>
+            The resulting image held detail at a scale Indian screens hadn't yet been built to show, so a parallel effort went into recalibrating projection throw and screen curvature at the handful of theatres capable of exhibiting the format at all.
+          </p>
+        </div>
+
+        <!-- Chapter 4 -->
+        <div class="chapter-block reveal" id="ch-4">
+          <p class="eyebrow">Chapter IV</p>
+          <h3>Sound & Digital Engineering</h3>
+
+          <div class="chapter-figure">
+            <svg viewBox="0 0 100 100" fill="none">
+              <line x1="14" y1="80" x2="14" y2="30" stroke="#C5A880" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="28" y1="80" x2="28" y2="46" stroke="#A39E93" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="42" y1="80" x2="42" y2="20" stroke="#C5A880" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="56" y1="80" x2="56" y2="52" stroke="#A39E93" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="70" y1="80" x2="70" y2="34" stroke="#C5A880" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="84" y1="80" x2="84" y2="60" stroke="#A39E93" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <p class="fig-caption"><b>Fig. 04</b>Six discrete channels — dialogue, effects, and score kept apart.</p>
+          </div>
+
+          <p class="drop-cap">
+            Image depth without matching sound depth felt hollow in test screenings, so Navodaya's audio team built a six-track magnetic mix for Padayottam, positioning dialogue, effects, and score across discrete channels rather than folding everything into a single mono strip.
+          </p>
+          <p>
+            In 1992, Navodaya bypassed analog sound barriers completely by introducing the Avid Digital Editing Suite and ProTools digital audio workstation. Equipping a Mac Quadra 900, editors Jijo and Jose trained local industry veterans to assemble sound effects and voice tracks non-linearly, ushering in the digital era before it took off in Hollywood.
+          </p>
+          
+          <div class="chapter-photo-wrap reveal">
+            <img src="https://static.wixstatic.com/media/8a582f_c98c5e1136d9431eb33a51e66b7aa96f~mv2.jpeg" alt="Avid AudioVision Digital Workstation 1992" />
+            <p class="fig-caption">The historic Avid AudioVision unit setup at SS Digital/RealImage, which revolutionized non-linear sound post-production in South India.</p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+<!-- ================================================================== -->
+<!-- FOOTER                                                              -->
+<!-- ================================================================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark">NAVODAYA <span>STUDIO</span></span>
+      <p>Founded in 1972, Navodaya built the optics, projection rigs, and processing chemistry behind India's earliest 70mm and stereoscopic releases.</p>
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Explore</p>
+      <ul>
+        <li><a href="index.html">The Archive</a></li>
+        <li><a href="history.html">Studio History</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="technology.html">Engineering Notes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Correspondence</p>
+      <ul>
+        <li><a href="mailto:archive@navodayastudio.com">archive@navodayastudio.com</a></li>
+        <li><a href="history.html">Kakkanad, Kochi, Kerala</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 1972 — 2026 Navodaya Studio</span>
+    <span>Site design in keeping with the archive</span>
+  </div>
+</footer>
+
+<script>
+  // ---------- Navigation Menu Scroll & Mobile Toggle ----------
+  var siteNav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function () {
+    siteNav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  navToggle.addEventListener('click', function() {
+    mobileNav.classList.toggle('open');
+    navToggle.classList.toggle('active');
+  });
+
+  // ---------- Chapter scroll-spy ----------
+  var chapterLinks = document.querySelectorAll('.chapter-link');
+  var chapterBlocks = document.querySelectorAll('.chapter-block');
+
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        chapterLinks.forEach(function (link) {
+          link.classList.toggle('active', link.dataset.target === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  chapterBlocks.forEach(function (block) { spy.observe(block); });
+
+  chapterLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById(link.dataset.target).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+<script src="js/effects.js"></script>
+
+</body>
+</html>
