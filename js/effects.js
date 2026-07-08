@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   grainOverlay.className = 'global-grain';
   document.body.appendChild(grainOverlay);
 
+
+
   // 1. Futuristic Cursor Glow Tracker
   var glowEl = document.createElement('div');
   glowEl.className = 'cursor-glow';
