@@ -345,4 +345,72 @@ document.addEventListener('DOMContentLoaded', function () {
       highlightBlueprintPart(defaultActiveCard.dataset.part);
     }
   }
+
+  // 8. Mobile Device Orientation Parallax (Gyroscope Tilt)
+  var lastBeta = 0;
+  var lastGamma = 0;
+  var isOrientationBound = false;
+  
+  function handleOrientation(e) {
+    if (e.beta === null || e.gamma === null) return;
+    
+    // Normalize holding angles (pitch beta: ~45deg default, roll gamma: ~0deg default)
+    var targetBeta = Math.max(15, Math.min(e.beta, 75));
+    var targetGamma = Math.max(-30, Math.min(e.gamma, 30));
+    
+    var db = targetBeta - 45;
+    var dg = targetGamma;
+    
+    // Smooth transition filtering
+    lastBeta += (db - lastBeta) * 0.12;
+    lastGamma += (dg - lastGamma) * 0.12;
+    
+    var tiltCards = document.querySelectorAll('.project-card, .blog-post-card, .stat-card');
+    tiltCards.forEach(function (card) {
+      var rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        var rx = -lastBeta * 0.25; // X-axis tilt
+        var ry = lastGamma * 0.25;  // Y-axis tilt
+        
+        card.style.transform = 'perspective(1000px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+        card.style.transition = 'transform 150ms cubic-bezier(0.1, 0.8, 0.2, 1)';
+        
+        var img = card.querySelector('.project-photo img, .blog-post-thumb img');
+        if (img) {
+          var tx = -lastGamma * 0.5;
+          var ty = -lastBeta * 0.5;
+          img.style.transform = 'scale(1.15) translate3d(' + tx + 'px, ' + ty + 'px, 0)';
+          img.style.transition = 'transform 150ms cubic-bezier(0.1, 0.8, 0.2, 1)';
+        }
+      }
+    });
+  }
+
+  function bindOrientationEvents() {
+    if (isOrientationBound) return;
+    window.addEventListener('deviceorientation', handleOrientation);
+    isOrientationBound = true;
+  }
+
+  function initOrientationPermissions() {
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      document.addEventListener('click', function requestIOSPermission() {
+        DeviceOrientationEvent.requestPermission()
+          .then(function (response) {
+            if (response === 'granted') {
+              bindOrientationEvents();
+            }
+          })
+          .catch(console.error);
+        document.removeEventListener('click', requestIOSPermission);
+      });
+    } else {
+      bindOrientationEvents();
+    }
+  }
+
+  // Attach gyroscope sensors only on mobile touch screens (coarse pointer)
+  if (window.matchMedia("(pointer: coarse)").matches) {
+    initOrientationPermissions();
+  }
 });
