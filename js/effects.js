@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Shared emitter references for Kuttichathan magical gravity dust
+  var heroSparkleEmitter = null;
+  var lastMobileSparkleTime = 0;
+
   // 0. Page Loader Ticker (Flashing initiatives on first enter)
   var loader = document.getElementById('siteLoader');
   var ticker = document.getElementById('loaderTicker');
@@ -94,15 +98,84 @@ document.addEventListener('DOMContentLoaded', function () {
   var milestoneRail = document.getElementById('milestoneRail');
   var heroBgLayers = document.querySelectorAll('.hero-bg-layer');
   var heroText = document.querySelector('.hero > .reveal');
+  var heroTitle = document.querySelector('.hero h1');
   
   var lastScrollY = -1;
+  var mouseHeroX = 0;
+  var mouseHeroY = 0;
+  var currentMouseHeroX = 0;
+  var currentMouseHeroY = 0;
+  
+  // Mousemove listener for Hero section 3D perspective tilt & Kuttichathan magic sparkles
+  var heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    var lastSparkleTime = 0;
+    
+    function spawnSparkle(x, y, customVx, customVy) {
+      var sparkle = document.createElement('div');
+      sparkle.className = 'magic-sparkle';
+      sparkle.style.left = x + 'px';
+      sparkle.style.top = y + 'px';
+      
+      var rz = (Math.random() - 0.5) * 300; // depth range -150px to +150px
+      var vx = customVx !== undefined ? customVx + (Math.random() - 0.5) * 35 : (Math.random() - 0.5) * 80;
+      var vy = customVy !== undefined ? customVy + (Math.random() - 0.5) * 35 : (Math.random() - 0.5) * 80 - 25;
+      var finalZ = rz + (Math.random() - 0.5) * 80; // drift Z coordinate
+      
+      heroSection.appendChild(sparkle);
+      
+      // Force initial layout paint state with 3D depth translation
+      sparkle.style.transform = 'translate3d(0, 0, ' + rz + 'px) scale(1.2)';
+      sparkle.style.opacity = '1';
+      
+      // Defer transition modifications to secondary paint cycle
+      setTimeout(function () {
+        sparkle.style.transform = 'translate3d(' + vx + 'px, ' + vy + 'px, ' + finalZ + 'px) scale(0.1)';
+        sparkle.style.opacity = '0';
+      }, 20);
+      
+      setTimeout(function () {
+        if (sparkle.parentNode) {
+          sparkle.parentNode.removeChild(sparkle);
+        }
+      }, 1000);
+    }
+    
+    // Assign shared emitter reference
+    heroSparkleEmitter = spawnSparkle;
+
+    heroSection.addEventListener('mousemove', function (e) {
+      if (window.matchMedia("(pointer: coarse)").matches) return;
+      var rect = heroSection.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var xc = rect.width / 2;
+      var yc = rect.height / 2;
+      mouseHeroX = (x - xc) / xc;
+      mouseHeroY = (y - yc) / yc;
+      
+      var now = Date.now();
+      if (now - lastSparkleTime > 40) {
+        spawnSparkle(x, y);
+        lastSparkleTime = now;
+      }
+    });
+    
+    heroSection.addEventListener('mouseleave', function () {
+      mouseHeroX = 0;
+      mouseHeroY = 0;
+    });
+  }
+  
   function updateScrollParallax() {
     var scrolled = window.scrollY;
     
+    // Smoothly ease mouse/gyro coordinates
+    currentMouseHeroX += (mouseHeroX - currentMouseHeroX) * 0.12;
+    currentMouseHeroY += (mouseHeroY - currentMouseHeroY) * 0.12;
+    
+    // Sprocket sync (runs on scroll change)
     if (scrolled !== lastScrollY) {
-      lastScrollY = scrolled;
-      
-      // Sprocket sync
       sprocketRails.forEach(function (rail, index) {
         var speed = (index % 2 === 0) ? 0.12 : -0.12;
         rail.style.transform = 'translateX(' + (scrolled * speed) + 'px)';
@@ -111,18 +184,41 @@ document.addEventListener('DOMContentLoaded', function () {
       if (milestoneRail) {
         milestoneRail.style.setProperty('--sprocket-offset', (scrolled * 0.25) + 'px');
       }
+    }
+    
+    // Hero 3D Perspective & Chromatic Aberration (runs always to allow smooth easing)
+    var bgScrollY = scrolled * 0.4;
+    var bgOffsetX = -currentMouseHeroX * 30; // slide background up to 30px
+    var bgOffsetY = -currentMouseHeroY * 20; // slide background up to 20px
+    
+    heroBgLayers.forEach(function (bg) {
+      bg.style.transform = 'translate3d(' + bgOffsetX + 'px, ' + (bgScrollY + bgOffsetY) + 'px, 0)';
+    });
+    
+    if (heroText) {
+      var textScrollY = scrolled * 0.15;
+      var rx = -currentMouseHeroY * 10; // X axis tilt
+      var ry = currentMouseHeroX * 12;  // Y axis tilt
+      heroText.style.transform = 'translate3d(0, ' + textScrollY + 'px, 0) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+      heroText.style.opacity = Math.max(0, 1 - (scrolled / 550));
+    }
+    
+    if (heroTitle) {
+      var ax = currentMouseHeroX * 12; // 12px split
+      var ay = currentMouseHeroY * 5;  // 5px split
+      heroTitle.style.setProperty('--anaglyph-x', ax + 'px');
+      heroTitle.style.setProperty('--anaglyph-y', ay + 'px');
       
-      // Hero Background & Text Parallax
-      heroBgLayers.forEach(function (bg) {
-        bg.style.transform = 'translate3d(0, ' + (scrolled * 0.4) + 'px, 0)';
-      });
+      var px = -currentMouseHeroX * 18; // 18px horizontal pop
+      var py = -currentMouseHeroY * 18; // 18px vertical pop
+      heroTitle.style.setProperty('--poster-shadow-x', px + 'px');
+      heroTitle.style.setProperty('--poster-shadow-y', py + 'px');
+    }
+    
+    // Viewport-based Image Parallax (runs on scroll change)
+    if (scrolled !== lastScrollY) {
+      lastScrollY = scrolled;
       
-      if (heroText) {
-        heroText.style.transform = 'translate3d(0, ' + (scrolled * 0.15) + 'px, 0)';
-        heroText.style.opacity = Math.max(0, 1 - (scrolled / 550));
-      }
-      
-      // Viewport-based Image Parallax
       var viewportHeight = window.innerHeight;
       var parallaxImgs = document.querySelectorAll('.frame-photo, .project-photo img, .blog-post-thumb img, .history-photo-card img, .chapter-photo-wrap img');
       
@@ -131,7 +227,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!parent) return;
         var rect = parent.getBoundingClientRect();
         
-        // If image container is within the viewport
         if (rect.top < viewportHeight && rect.bottom > 0) {
           var elementTop = rect.top + scrolled;
           var relativeScroll = (scrolled + viewportHeight - elementTop) / (viewportHeight + rect.height);
@@ -140,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
+    
     requestAnimationFrame(updateScrollParallax);
   }
   
@@ -259,6 +355,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       
+      // Update console telemetry tags
+      var telemetryPerspective = document.getElementById('telemetryPerspective');
+      var telemetryAngle = document.getElementById('telemetryAngle');
+      if (telemetryPerspective) {
+        telemetryPerspective.textContent = activeMode.toUpperCase();
+      }
+      if (telemetryAngle) {
+        telemetryAngle.textContent = currentAngle + '°';
+      }
+      
       // Update toggle buttons active state
       toggleBtns.forEach(function (btn) {
         btn.classList.toggle('active', btn.dataset.mode === activeMode);
@@ -360,6 +466,23 @@ document.addEventListener('DOMContentLoaded', function () {
     
     var db = targetBeta - 45;
     var dg = targetGamma;
+    
+    // Push updates to the global hero tracking coordinates
+    mouseHeroX = dg / 30; // value between -1 and 1
+    mouseHeroY = db / 30; // value between -1 and 1
+    
+    // Spawn gravity sparkles inside Hero section on mobile tilt
+    if (heroSparkleEmitter && heroSection) {
+      var now = Date.now();
+      if (now - lastMobileSparkleTime > 150) {
+        var rx = Math.random() * heroSection.clientWidth;
+        var ry = Math.random() * heroSection.clientHeight;
+        var driftVx = dg * 1.5;
+        var driftVy = db * 1.5 - 15; // drift in direction of tilt
+        heroSparkleEmitter(rx, ry, driftVx, driftVy);
+        lastMobileSparkleTime = now;
+      }
+    }
     
     // Smooth transition filtering
     lastBeta += (db - lastBeta) * 0.12;
