@@ -89,8 +89,8 @@
 <!-- ================================================================== -->
 <!-- SECTION 1 — MANIFESTO / STUDIO VISION                             -->
 <!-- ================================================================== -->
-<section class="section" id="vision" style="padding-bottom: 5rem;">
-  <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem;">
+<section class="section" id="vision" style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div style="max-width: 1080px; margin: 0 auto;">
     <div class="reveal" style="margin-bottom: 3.5rem;">
       <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1rem 0;">
         <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
@@ -135,95 +135,98 @@
 <!-- SECTION 1B — THE KAKKANAD GRAVITY ROOM EXHIBITION                  -->
 <!-- ================================================================== -->
 <section class="section" id="gravity-exhibition" style="padding-top: 6rem; padding-bottom: 6rem;">
-  <div style="max-width: 1080px; margin: 0 auto; padding: 0 1.5rem;">
+  <div style="max-width: 1080px; margin: 0 auto;">
     
-    <!-- Top Header Layout -->
-    <div class="gravity-header reveal">
-      <div>
-        <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1rem 0;">
-          <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
-        </svg>
-        <p class="eyebrow" style="text-align: left; margin-bottom: 8px;">Interactive Exhibition</p>
-        <h2 class="heading-traditional" style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 2.6rem); font-weight: 500; margin: 0; line-height: 1.1;">The Kakkanad Gravity Room</h2>
-      </div>
-      <div>
-        <p style="font-size: 14.5px; line-height: 1.8; color: var(--silver); margin: 0 0 1rem;">
-          In 1984, to capture the gravity-defying sequences of <em>My Dear Kuttichathan</em>, Navodaya Appachan and director Jijo Punnoose engineered a fully rotational cubic set suspended on a massive steel axle. 
-        </p>
-        <p style="font-size: 14.5px; line-height: 1.8; color: var(--silver); margin: 0;">
-          By bolting the camera directly to the rotating room frame, the set appeared upright and stationary, creating the illusion of children walking up walls and dancing on ceilings. Use the interactive simulator below to see the engineering behind the magic.
-        </p>
-      </div>
-    </div>
-    
-    <!-- Console Layout -->
-    <div class="gravity-console-grid reveal">
+    <div class="gravity-layout reveal">
       
-      <!-- Left Column: The CRT Monitor Screen -->
-      <div class="console-monitor-wrapper">
-        <div class="console-screen-telemetry">
-          <span>[ SCANNER: ACTIVE ]</span>
-          <span>[ PERSPECTIVE: <span id="telemetryPerspective" style="color: var(--gold);">STUDIO</span> ]</span>
+      <!-- Left Column: Title + 3D Viewer -->
+      <div class="gravity-col gravity-col-viewer">
+        <div class="gravity-title-block">
+          <svg viewBox="0 0 100 20" class="traditional-accent" style="margin: 0 0 1rem 0;">
+            <path d="M10 10 Q30 5 50 10 T90 10 Q70 15 50 10 T10 10 M50 2 L50 18" stroke="currentColor" stroke-width="1.2" fill="none" />
+          </svg>
+          <p class="eyebrow" style="text-align: left; margin-bottom: 8px;">Interactive Exhibition</p>
+          <h2 class="heading-traditional" style="font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 2.6rem); font-weight: 500; margin: 0; line-height: 1.1;">The Kakkanad Gravity Room</h2>
         </div>
-        
-        <div class="gravity-view-panel">
-          <div class="gravity-view-indicator" id="gravityIndicator">Studio Camera Locked</div>
-          <div class="gravity-room-cube" id="gravityRoom">
-            <!-- 3D Cube Faces -->
-            <div class="room-face back"></div>
-            <div class="room-face left"></div>
-            <div class="room-face right"></div>
-            <div class="room-face top"></div>
-            <div class="room-face bottom"></div>
-            <!-- Character sprite -->
-            <div class="gravity-character" id="gravityChar"></div>
+
+        <div class="console-monitor-wrapper">
+          <div class="console-screen-telemetry">
+            <span>[ SCANNER: ACTIVE ]</span>
+            <span>[ PERSPECTIVE: <span id="telemetryPerspective" style="color: var(--gold);">STUDIO</span> ]</span>
           </div>
-        </div>
-        
-        <div class="console-screen-telemetry">
-          <span>[ ROTATION: <span id="telemetryAngle" style="color: var(--gold);">0°</span> ]</span>
-          <span>[ AXLE OFFSET: 65MM ]</span>
-        </div>
-        
-        <p class="fig-caption" style="text-align: center; margin-top: 1.2rem; font-size: 11px; letter-spacing: 0.1em; color: var(--silver); text-transform: uppercase;">
-          Fig. 04 · Interactive 3D Set Mechanics
-        </p>
-      </div>
-      
-      <!-- Right Column: Control Panel Desk -->
-      <div class="console-desk-panel">
-        <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--cream); margin-top: 0; margin-bottom: 2rem; border-bottom: 1px solid var(--hairline); padding-bottom: 0.8rem;" class="console-panel-title">Simulator Console</h3>
-        
-        <!-- Controls panel -->
-        <div class="gravity-controls" style="margin-top: 0; background: transparent; border: none; padding: 0;">
-          <div class="control-group">
-            <span class="control-label">1. Choose Camera Perspective</span>
-            <div class="toggle-switch-wrapper">
-              <button class="toggle-btn active" id="btnStudioCam" data-mode="studio">Studio (External View)</button>
-              <button class="toggle-btn" id="btnCinematicCam" data-mode="cinematic">Cinematic (Camera Inside Set)</button>
+          
+          <div class="gravity-view-panel">
+            <div class="gravity-view-indicator" id="gravityIndicator">Studio Camera Locked</div>
+            <div class="gravity-room-cube" id="gravityRoom">
+              <div class="room-face back">
+                <article class="room-newspaper" aria-hidden="true">
+                  <p class="paper-masthead">Malayala Manorama · Kochi</p>
+                  <h4 class="paper-headline">Navodaya Studio Builds Rotating Room for 3D Film</h4>
+                  <p class="paper-date">Kakkanad, August 1984</p>
+                  <p class="paper-body">To film gravity-defying scenes in <em>My Dear Kuttichathan</em>, engineers suspend a cubic set on a steel axle. By bolting the camera to the rotating frame, actors appear to walk on walls and ceilings without optical trickery.</p>
+                  <p class="paper-caption">Fig. · Archive press clipping, Navodaya Kakkanad</p>
+                </article>
+              </div>
+              <div class="room-face left"></div>
+              <div class="room-face right"></div>
+              <div class="room-face top"></div>
+              <div class="room-face bottom"></div>
+              <div class="gravity-character" id="gravityChar"></div>
             </div>
           </div>
           
-          <div class="control-group" style="margin-top: 2rem;">
-            <span class="control-label">2. Rotate the Set</span>
-            <div class="rotation-btns">
-              <button class="rot-btn active" data-angle="0">Floor (0°)</button>
-              <button class="rot-btn" data-angle="90">Left Wall (90°)</button>
-              <button class="rot-btn" data-angle="180">Ceiling (180°)</button>
-              <button class="rot-btn" data-angle="270">Right Wall (270°)</button>
-            </div>
+          <div class="console-screen-telemetry">
+            <span>[ ROTATION: <span id="telemetryAngle" style="color: var(--gold);">0°</span> ]</span>
+            <span>[ AXLE OFFSET: 65MM ]</span>
           </div>
-        </div>
-        
-        <!-- Operating Manual box -->
-        <div class="console-manual-box" style="margin-top: 2.5rem; border: 1px dashed var(--hairline); padding: 1.2rem; border-radius: 4px;">
-          <span style="font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 0.5rem; font-weight: 600;">System Protocol</span>
-          <p style="font-size: 12px; line-height: 1.6; color: var(--silver); margin: 0;">
-            Bolting the camera directly to the rotating set coordinates standardizes the viewer frame, rendering physical ceiling walks in cinematic playback.
+          
+          <p class="fig-caption" style="text-align: center; margin-top: 1.2rem; font-size: 11px; letter-spacing: 0.1em; color: var(--silver); text-transform: uppercase;">
+            Fig. 04 · Rotating Set with Press Clipping Backdrop
           </p>
         </div>
       </div>
-      
+
+      <!-- Right Column: Story + Controls -->
+      <div class="gravity-col gravity-col-console">
+        <div class="gravity-intro">
+          <p style="font-size: 14.5px; line-height: 1.8; color: var(--silver); margin: 0 0 1rem;">
+            In 1984, to capture the gravity-defying sequences of <em>My Dear Kuttichathan</em>, Navodaya Appachan and director Jijo Punnoose engineered a fully rotational cubic set suspended on a massive steel axle.
+          </p>
+          <p style="font-size: 14.5px; line-height: 1.8; color: var(--silver); margin: 0;">
+            By bolting the camera directly to the rotating room frame, the set appeared upright and stationary, creating the illusion of children walking up walls and dancing on ceilings. Use the simulator to see the engineering behind the magic.
+          </p>
+        </div>
+
+        <div class="console-desk-panel">
+          <h3 class="console-panel-title">Simulator Console</h3>
+          
+          <div class="gravity-controls">
+            <div class="control-group">
+              <span class="control-label">1. Choose Camera Perspective</span>
+              <div class="toggle-switch-wrapper">
+                <button class="toggle-btn active" id="btnStudioCam" data-mode="studio">Studio (External View)</button>
+                <button class="toggle-btn" id="btnCinematicCam" data-mode="cinematic">Cinematic (Camera Inside Set)</button>
+              </div>
+            </div>
+            
+            <div class="control-group" style="margin-top: 2rem;">
+              <span class="control-label">2. Rotate the Set</span>
+              <div class="rotation-btns">
+                <button class="rot-btn active" data-angle="0">Floor (0°)</button>
+                <button class="rot-btn" data-angle="90">Left Wall (90°)</button>
+                <button class="rot-btn" data-angle="180">Ceiling (180°)</button>
+                <button class="rot-btn" data-angle="270">Right Wall (270°)</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="console-manual-box">
+            <span class="console-manual-label">System Protocol</span>
+            <p>Bolting the camera directly to the rotating set coordinates standardizes the viewer frame, rendering physical ceiling walks in cinematic playback.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -902,29 +905,11 @@
   }
 
   var currentActiveIdx = 0;
-  var timelineSec = document.getElementById('timeline');
-  var userInteracting = false;
-  var interactTimeout;
 
   // Align scroll offset when a specific milestone button is clicked
   function scrollToMilestone(idx) {
-    userInteracting = true;
-    clearTimeout(interactTimeout);
-    
-    var totalScrollable = timelineSec.offsetHeight - window.innerHeight;
-    var targetScroll = timelineSec.offsetTop + (idx / milestoneData.length) * totalScrollable + 80;
-    
-    window.scrollTo({
-      top: targetScroll,
-      behavior: 'smooth'
-    });
-    
     setMilestone(idx);
     currentActiveIdx = idx;
-    
-    interactTimeout = setTimeout(function () {
-      userInteracting = false;
-    }, 1000);
   }
 
   milestones.forEach(function (m) {
@@ -934,30 +919,6 @@
   });
 
   applyMilestone(0);
-
-  // ---------- Scroll-triggered timeline transition ----------
-  window.addEventListener('scroll', function () {
-    if (!timelineSec || userInteracting) return;
-    
-    var rect = timelineSec.getBoundingClientRect();
-    var viewHeight = window.innerHeight;
-    
-    // Switch active year as the user scrolls down the pinned section track
-    if (rect.top <= 0 && rect.bottom >= viewHeight) {
-      var totalScrollable = rect.height - viewHeight;
-      var scrolled = -rect.top;
-      var progress = scrolled / totalScrollable;
-      
-      var totalMilestones = milestoneData.length;
-      var activeIdx = Math.floor(progress * totalMilestones);
-      activeIdx = Math.max(0, Math.min(activeIdx, totalMilestones - 1));
-      
-      if (activeIdx !== currentActiveIdx) {
-        currentActiveIdx = activeIdx;
-        setMilestone(activeIdx);
-      }
-    }
-  });
 
   // ---------- Generative film-grain "video" ----------
   (function () {
